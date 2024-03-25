@@ -1,0 +1,163 @@
+/* Keyframe animation for 5 seconds */
+
+@keyframes logoAnimation {
+    from {
+        width: 25px;
+        opacity: 0;
+    }
+
+    to {
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+#logo {
+    animation: logoAnimation 5s;
+}
+
+/* Represents mobile-view */
+header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.nav_links{
+    display: flex;
+    justify-content: flex-end;
+}
+
+body {
+    font-family: "Poppins", serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+
+.card > header{
+    background: #288088;
+    border: solid 2px #45ADAD;
+    padding: 20px 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    align-items: center;
+}
+
+.card {
+    flex-basis: 450px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    align-items: center;
+}
+
+.pricing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery img{
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* Represents tablet view to large desktop screen */
+@media (min-width: 900px){
+
+    header{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #logo {
+        justify-content: flex-start;
+    }
+
+    .nav_links {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+        }
+
+    .pricing {
+        flex-basis: 275px;
+    }
+
+    .card {
+        flex-basis: 275px;
+    }
+
+
+}
+/* Reduce motion for logo animation */
+@media (prefers-reduced-motion: reduce) {
+    #logo {
+        animation: none;
+    }
+}
+/* This view represents when you print PDF in portrait mode */
+@media print {
+    header {
+        width: 100%;
+    }
+
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+        background-color: gray;
+        flex-basis: 325px;
+    }
+
+    .nav_links {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    #nav {
+        width: 100%;
+    }
+    .card>header {
+        background: #288088;
+        border: solid 2px #45ADAD;
+        padding: 20px 0;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        align-items: center;
+    }
+
+    .card {
+        flex-basis: 450px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        align-items: center;
+        flex-basis: 325px;
+        border: solid 2px #45addd;
+    }
+
+    .pricing {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    /* The following code hides gallery on PDF */
+    .gallery {
+        display: none;
+    }
+
+    #gallery {
+        display: none;
+    }
+
+}
